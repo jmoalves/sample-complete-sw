@@ -1,0 +1,7 @@
+**/target
+**/Dockerfile
+kubectrl.yaml
+**/.git
+LICENSE
+**/.md
+.devcontainer

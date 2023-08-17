@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+    <!-- Enable features -->
+    <featureManager>
+        <feature>servlet-6.0</feature>
+        <feature>restfulWS-3.1</feature>
+
+        <!-- Other jakartaee-10.0 -->
+        <!--
+        <feature>jakartaee-10.0</feature>
+        <feature>appAuthentication-3.0</feature>
+        <feature>appAuthorization-2.1</feature>
+        <feature>appClientSupport-2.0</feature>
+        <feature>appSecurity-5.0</feature>
+        <feature>batch-2.1</feature>
+        <feature>beanValidation-3.0</feature>
+        <feature>cdi-4.0</feature>
+        <feature>concurrent-3.0</feature>
+        <feature>connectors-2.1</feature>
+        <feature>distributedMap-1.0</feature>
+        <feature>enterpriseBeans-4.0</feature>
+        <feature>enterpriseBeansHome-4.0</feature>
+        <feature>enterpriseBeansLite-4.0</feature>
+        <feature>enterpriseBeansPersistentTimer-4.0</feature>
+        <feature>enterpriseBeansRemote-4.0</feature>
+        <feature>expressionLanguage-5.0</feature>
+        <feature>faces-4.0</feature>
+        <feature>jakartaee-10.0</feature>
+        <feature>jdbc-4.2</feature>
+        <feature>jndi-1.0</feature>
+        <feature>jsonb-3.0</feature>
+        <feature>jsonp-2.1</feature>
+        <feature>mail-2.1</feature>
+        <feature>managedBeans-2.0</feature>
+        <feature>mdb-4.0</feature>
+        <feature>messaging-3.1</feature>
+        <feature>messagingClient-3.0</feature>
+        <feature>messagingSecurity-3.0</feature>
+        <feature>messagingServer-3.0</feature>
+        <feature>pages-3.1</feature>
+        <feature>persistence-3.1</feature>
+        <feature>persistenceContainer-3.1</feature>
+        <feature>restfulWSClient-3.1</feature>
+        <feature>ssl-1.0</feature>
+        <feature>transportSecurity-1.0</feature>
+        <feature>webProfile-10.0</feature>
+        <feature>websocket-2.1</feature>
+        <feature>xmlBinding-4.0</feature>
+        <feature>xmlWS-4.0</feature>
+        -->
+    </featureManager>
+
+    <basicRegistry id="basic" realm="BasicRealm">
+        <!-- <user name="yourUserName" password="" />  -->
+    </basicRegistry>
+
+    <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="9080"
+                  httpsPort="9443" />
+
+    <!-- Automatically expand WAR files and EAR files -->
+    <applicationManager autoExpand="true"/>
+</server>

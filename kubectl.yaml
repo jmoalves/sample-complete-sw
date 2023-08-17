@@ -1,0 +1,50 @@
+### app: sample-app
+### Service
+###
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-app-service
+  labels:
+    app: sample-app
+spec:
+  type: NodePort
+  ports:
+    - name: sample-app-war
+      port: 9080
+      # targetPort: 9080
+      nodePort: 32756
+  selector:
+    app: sample-app
+---
+###
+### Deployment
+###
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app-deployment
+  labels:
+    app: sample-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+      - name: sample-app-war
+        image: localhost:32000/jmoalves/sample-app
+        # image: websphere-liberty:23.0.0.7-full-java17-openj9
+        ports:
+        - containerPort: 9080
+        livenessProbe:
+          httpGet:
+            path: /app/api/check/ping
+            port: 9080
+          initialDelaySeconds: 30
+          periodSeconds: 5

@@ -26,7 +26,8 @@ RUN echo \
 RUN echo \
     && echo === TOOLS \
     && bash -l /tmp/tools/java/install.sh -v 17.0.7.0 \
-    && bash -l /tmp/tools/liberty/install.sh -v 23.0.0.7 -f openliberty -b kernel \
+    && bash -l /tmp/tools/maven/install.sh -v 3.9.4 -r http://astronauta.biruta.net:31000/repository/maven-public/ \
+    && bash -l /tmp/tools/liberty/install.sh -v 23.0.0.7 -f openliberty -b jakartaee10 \
     && echo ===
 
 RUN mkdir -p /var/liberty/usr
